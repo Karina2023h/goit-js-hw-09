@@ -31,4 +31,13 @@ function createPromise(position, delay) {
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-   
+      if (shouldResolve) {
+        // Fulfill
+        resolve(ef);
+      } else {
+        // Reject
+        reject(ef);
+      }
+    }, delay);
+  });
+}
